@@ -1,8 +1,9 @@
 from django.views.generic import TemplateView, ListView, DetailView
-from .models import Cat1, Cat2, Cat3, Cat4, Cat5
+from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
+from .models import Cat1, Cat2, Cat3, Cat4, Cat5
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -10,6 +11,11 @@ class HomePageView(TemplateView):
 class Cat1PageView(ListView):
     model = Cat1
     template_name = 'list.html'
+
+class BlogCreateView(CreateView):
+    model = Cat1
+    template_name = 'post_new.html'
+    fields = ['title', 'author', 'body']
 
 class Cat2PageView(ListView):
     model = Cat2
