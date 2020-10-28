@@ -1,11 +1,47 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for post in object_list %}
+
+    {% if request.path_info == '/cat5/' %}
+        {% for post in object_list %}
+            <div class="post-entry">
+                <h2><a href="{% url 'post_detail5' post.pk %}">{{ post.title }}</a></h2>
+                <p>{{ post.body }}</p>
+                <p>Cat5</p>
+            </div>
+        {% endfor %}
+    {% elif request.path_info == '/cat4/' %}
+        {% for post in object_list %}
+        <div class="post-entry">
+            <h2><a href="{% url 'post_detail4' post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.body }}</p>
+            <p>Cat4</p>
+        </div>
+        {% endfor %}
+    {% elif request.path_info == '/cat3/' %}
+        {% for post in object_list %}
+        <div class="post-entry">
+            <h2><a href="{% url 'post_detail3' post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.body }}</p>
+            <p>Cat3</p>
+        </div>
+        {% endfor %}
+    {% elif request.path_info == '/cat2/' %}
+        {% for post in object_list %}
+        <div class="post-entry">
+            <h2><a href="{% url 'post_detail2' post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.body }}</p>
+            <p>Cat2</p>
+        </div>
+        {% endfor %}
+    {% elif request.path_info == '/cat1/' %}
+        {% for post in object_list %}
         <div class="post-entry">
             <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.body }}</p>
+            <p>Cat1</p>
         </div>
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
     <a href="{% url 'post_new' %}">+ New Blog Post</a>
 {% endblock content %}
