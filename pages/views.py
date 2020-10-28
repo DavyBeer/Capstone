@@ -3,6 +3,7 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
+from django.http import request
 from .models import Cat1, Cat2, Cat3, Cat4, Cat5
 
 class HomePageView(TemplateView):
@@ -11,11 +12,6 @@ class HomePageView(TemplateView):
 class Cat1PageView(ListView):
     model = Cat1
     template_name = 'list.html'
-
-class BlogCreateView(CreateView):
-    model = Cat1
-    template_name = 'post_new.html'
-    fields = ['title', 'author', 'body']
 
 class Cat2PageView(ListView):
     model = Cat2
@@ -36,6 +32,47 @@ class Cat5PageView(ListView):
 class Cat1DetailView(DetailView):
     model = Cat1
     template_name = 'post_detail.html'
+
+class Cat2DetailView(DetailView):
+    model = Cat2
+    template_name = 'post_detail.html'
+
+class Cat3DetailView(DetailView):
+    model = Cat3
+    template_name = 'post_detail.html'
+
+class Cat4DetailView(DetailView):
+    model = Cat4
+    template_name = 'post_detail.html'
+
+class Cat5DetailView(DetailView):
+    model = Cat5
+    template_name = 'post_detail.html'
+
+class Cat1CreateView(CreateView):
+    model = Cat1
+    template_name = 'post_new.html'
+    fields = ['title', 'author', 'body']
+
+class Cat2CreateView(CreateView):
+    model = Cat2
+    template_name = 'post_new.html'
+    fields = ['title', 'author', 'body']
+
+class Cat3CreateView(CreateView):
+    model = Cat3
+    template_name = 'post_new.html'
+    fields = ['title', 'author', 'body']
+
+class Cat4CreateView(CreateView):
+    model = Cat4
+    template_name = 'post_new.html'
+    fields = ['title', 'author', 'body']
+
+class Cat5CreateView(CreateView):
+    model = Cat5
+    template_name = 'post_new.html'
+    fields = ['title', 'author', 'body']
 
 class SignUpView(generic.CreateView):
     form_class = UserCreationForm
