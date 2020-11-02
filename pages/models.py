@@ -13,7 +13,7 @@ class Cat1(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('post_detail', args=[str(self.id)])
+        return reverse('post_detail', args=[str(self.pk)])
 
 class Cat2(models.Model):
     title = models.CharField(max_length=200)
@@ -27,7 +27,7 @@ class Cat2(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('post_detail', args=[str(self.id)])
+        return reverse('post_detail2', args=[str(self.pk)])
 
 class Cat3(models.Model):
     title = models.CharField(max_length=200)
@@ -41,7 +41,7 @@ class Cat3(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('post_detail', args=[str(self.id)])
+        return reverse('post_detail3', args=[str(self.pk)])
 
 class Cat4(models.Model):
     title = models.CharField(max_length=200)
@@ -55,7 +55,7 @@ class Cat4(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('post_detail', args=[str(self.id)])
+        return reverse('post_detail4', args=[str(self.pk)])
 
 class Cat5(models.Model):
     title = models.CharField(max_length=200)
@@ -69,4 +69,4 @@ class Cat5(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('post_detail', args=[str(self.id)])
+        return reverse('post_detail5', args=[str(self.pk)])
