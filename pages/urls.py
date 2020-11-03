@@ -1,6 +1,13 @@
 from django.urls import path
-from .views import HomePageView, Cat1PageView, Cat2PageView, Cat3PageView, Cat4PageView, Cat5PageView, Cat1DetailView, Cat2DetailView, Cat3DetailView, Cat4DetailView, Cat5DetailView, SignUpView, Cat1CreateView, Cat2CreateView, Cat3CreateView, Cat4CreateView, Cat5CreateView, Cat1UpdateView, Cat2UpdateView, Cat3UpdateView, Cat4UpdateView, Cat5UpdateView
-
+from .views import ( 
+    HomePageView, 
+    SignUpView, 
+    Cat1DeleteView, 
+    Cat1PageView, Cat2PageView, Cat3PageView, Cat4PageView, Cat5PageView, 
+    Cat1DetailView, Cat2DetailView, Cat3DetailView, Cat4DetailView, Cat5DetailView, 
+    Cat1CreateView, Cat2CreateView, Cat3CreateView, Cat4CreateView, Cat5CreateView, 
+    Cat1UpdateView, Cat2UpdateView, Cat3UpdateView, Cat4UpdateView, Cat5UpdateView
+)
 urlpatterns = [
     path('cat1/', Cat1PageView.as_view(), name='cat1'),
     path('cat1/<int:pk>/', Cat1DetailView.as_view(), name='post_detail'),
