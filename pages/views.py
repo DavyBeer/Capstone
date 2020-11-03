@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView, ListView, DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
@@ -31,22 +31,27 @@ class Cat5PageView(ListView):
 
 class Cat1DetailView(DetailView):
     model = Cat1
+    context_object_name = 'post'
     template_name = 'post_detail.html'
 
 class Cat2DetailView(DetailView):
     model = Cat2
+    context_object_name = 'post'
     template_name = 'post_detail.html'
 
 class Cat3DetailView(DetailView):
     model = Cat3
+    context_object_name = 'post'
     template_name = 'post_detail.html'
 
 class Cat4DetailView(DetailView):
     model = Cat4
+    context_object_name = 'post'
     template_name = 'post_detail.html'
 
 class Cat5DetailView(DetailView):
     model = Cat5
+    context_object_name = 'post'
     template_name = 'post_detail.html'
 
 class Cat1CreateView(CreateView):
@@ -73,6 +78,13 @@ class Cat5CreateView(CreateView):
     model = Cat5
     template_name = 'post_new.html'
     fields = ['title', 'author', 'body']
+
+
+
+class Cat1DeleteView(DeleteView):
+    model = Cat1
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('home')
 
 class SignUpView(generic.CreateView):
     form_class = UserCreationForm
