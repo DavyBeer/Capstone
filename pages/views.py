@@ -109,6 +109,26 @@ class Cat1DeleteView(DeleteView):
     template_name = 'post_delete.html'
     success_url = reverse_lazy('home')
 
+class Cat2DeleteView(DeleteView):
+    model = Cat2
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('home')
+
+class Cat3DeleteView(DeleteView):
+    model = Cat3
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('home')
+
+class Cat4DeleteView(DeleteView):
+    model = Cat4
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('home')
+
+class Cat5DeleteView(DeleteView):
+    model = Cat5
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('home')
+
 class SignUpView(generic.CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
