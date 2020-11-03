@@ -7,6 +7,7 @@
             <div class="post-entry">
                 <h2><a href="{% url 'post_detail5' post.pk %}">{{ post.title }}</a></h2>
                 <p>{{ post.body }}</p>
+                <a href="{% url 'post_edit5' post.pk %}">Edit Blog Post</a>
             </div>
         {% endfor %}
     {% elif request.path_info == '/cat4/' %}
@@ -14,6 +15,7 @@
         <div class="post-entry">
             <h2><a href="{% url 'post_detail4' post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.body }}</p>
+            <a href="{% url 'post_edit4' post.pk %}">Edit Blog Post</a>
         </div>
         {% endfor %}
     {% elif request.path_info == '/cat3/' %}
@@ -21,6 +23,7 @@
         <div class="post-entry">
             <h2><a href="{% url 'post_detail3' post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.body }}</p>
+            <a href="{% url 'post_edit3' post.pk %}">Edit Blog Post</a>
         </div>
         {% endfor %}
     {% elif request.path_info == '/cat2/' %}
@@ -28,6 +31,7 @@
         <div class="post-entry">
             <h2><a href="{% url 'post_detail2' post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.body }}</p>
+            <a href="{% url 'post_edit2' post.pk %}">Edit Blog Post</a>
         </div>
         {% endfor %}
     {% elif request.path_info == '/cat1/' %}
@@ -35,6 +39,7 @@
         <div class="post-entry">
             <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.body }}</p>
+            <a href="{% url 'post_edit' post.pk %}">Edit Blog Post</a>
         </div>
         {% endfor %}
     {% endif %}
