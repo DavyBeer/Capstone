@@ -79,7 +79,30 @@ class Cat5CreateView(CreateView):
     template_name = 'post_new.html'
     fields = ['title', 'author', 'body']
 
+class Cat1UpdateView(UpdateView):
+    model = Cat1
+    template_name = 'post_edit.html'
+    fields = ['title', 'body']
 
+class Cat2UpdateView(UpdateView):
+    model = Cat2
+    template_name = 'post_edit.html'
+    fields = ['title', 'body']
+
+class Cat3UpdateView(UpdateView):
+    model = Cat3
+    template_name = 'post_edit.html'
+    fields = ['title', 'body']
+
+class Cat4UpdateView(UpdateView):
+    model = Cat4
+    template_name = 'post_edit.html'
+    fields = ['title', 'body']
+
+class Cat5UpdateView(UpdateView):
+    model = Cat5
+    template_name = 'post_edit.html'
+    fields = ['title', 'body']
 
 class Cat1DeleteView(DeleteView):
     model = Cat1
