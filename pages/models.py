@@ -8,6 +8,7 @@ class Cat1(models.Model):
         on_delete=models.CASCADE,
     )
     body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -22,6 +23,7 @@ class Cat2(models.Model):
         on_delete=models.CASCADE,
     )
     body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -36,6 +38,7 @@ class Cat3(models.Model):
         on_delete=models.CASCADE,
     )
     body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -50,6 +53,7 @@ class Cat4(models.Model):
         on_delete=models.CASCADE,
     )
     body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -64,6 +68,7 @@ class Cat5(models.Model):
         on_delete=models.CASCADE,
     )
     body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
