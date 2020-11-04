@@ -15,7 +15,7 @@
 
     <header class="top">
         <div id="up-center">
-            <h1><a href="{% url 'home' %}">Website Title</a></h1>
+            <h1><a href="{% url 'home' %}">Exercise Forum</a></h1>
         </div>
         <div id="up-right">
             {% if user.is_authenticated %}
@@ -28,11 +28,11 @@
     </header>
 
     <div class="nav-bar">
-        <a href="{% url 'cat1' %}">Cat1</a> | 
-        <a href="{% url 'cat2' %}">Cat2</a> | 
-        <a href="{% url 'cat3' %}">Cat3</a> | 
-        <a href="{% url 'cat4' %}">Cat4</a> | 
-        <a href="{% url 'cat5' %}">Cat5</a>
+        <a href="{% url 'cat1' %}">Exercise Questions</a> | 
+        <a href="{% url 'cat2' %}">Nutrition Questions</a> | 
+        <a href="{% url 'cat3' %}">Equipment Reviews</a> | 
+        <a href="{% url 'cat4' %}">Gym Reviews</a> | 
+        <a href="{% url 'cat5' %}">Ideas</a>
     </div>
 
     {% block content %}
