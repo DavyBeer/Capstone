@@ -49,6 +49,24 @@ class Cat2(models.Model):
     def get_absolute_url(self):
         return reverse('post_detail2', args=[str(self.pk)])
 
+class Comment2(models.Model):
+    article = models.ForeignKey(
+        Cat2,
+        on_delete=models.CASCADE,
+        related_name='comments',
+    )
+    comment = models.CharField(max_length=140)
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return self.comment
+    
+    def get_absolute_url(self):
+        return reverse('list')
+
 class Cat3(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(
@@ -63,6 +81,24 @@ class Cat3(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail3', args=[str(self.pk)])
+
+class Comment3(models.Model):
+    article = models.ForeignKey(
+        Cat3,
+        on_delete=models.CASCADE,
+        related_name='comments',
+    )
+    comment = models.CharField(max_length=140)
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return self.comment
+    
+    def get_absolute_url(self):
+        return reverse('list')
 
 class Cat4(models.Model):
     title = models.CharField(max_length=200)
@@ -79,6 +115,24 @@ class Cat4(models.Model):
     def get_absolute_url(self):
         return reverse('post_detail4', args=[str(self.pk)])
 
+class Comment4(models.Model):
+    article = models.ForeignKey(
+        Cat4,
+        on_delete=models.CASCADE,
+        related_name='comments',
+    )
+    comment = models.CharField(max_length=140)
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return self.comment
+    
+    def get_absolute_url(self):
+        return reverse('list')
+
 class Cat5(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(
@@ -93,3 +147,21 @@ class Cat5(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail5', args=[str(self.pk)])
+
+class Comment5(models.Model):
+    article = models.ForeignKey(
+        Cat5,
+        on_delete=models.CASCADE,
+        related_name='comments',
+    )
+    comment = models.CharField(max_length=140)
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return self.comment
+    
+    def get_absolute_url(self):
+        return reverse('list')
