@@ -52,15 +52,27 @@
         {% endfor %}
     {% elif request.path_info == '/cat1/' %}
         {% for post in object_list %}
-            <div class="post-entry">
-                <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-                <h4>Posted by: {{ post.author }} at {{ post.created }}</h4>
-                <div>
-                    <a href="{% url 'post_edit' post.pk %}"><button>Edit Blog Post</button></a>
-                    <a href="{% url 'post_delete' post.pk %}"><button>Delete Blog Post</button></a>
+            <div class="post">
+                <div class="post-entry">
+                    <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+                    <h4>Posted by: {{ post.author }} at {{ post.created }}</h4>
+                    <div>
+                        <a href="{% url 'post_edit' post.pk %}"><button>Edit Blog Post</button></a>
+                        <a href="{% url 'post_delete' post.pk %}"><button>Delete Blog Post</button></a>
+                    </div>
+                    
                 </div>
-                <hr>
+                <div class="post-footer">
+                    {% for comment in post.comments.all %}
+                        <p>
+                            <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+                            {{ comment }}
+                            something
+                        </p>
+                    {% endfor %}
+                </div>
             </div>
+            <hr>
         {% endfor %}
     {% endif %}
     {% if request.path_info == '/cat5/' %}
