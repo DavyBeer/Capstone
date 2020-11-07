@@ -10,6 +10,7 @@
                 <div>
                     <a href="{% url 'post_edit5' post.pk %}"><button>Edit Blog Post</button></a>
                     <a href="{% url 'post_delete5' post.pk %}"><button>Delete Blog Post</button></a>
+                    <a href="{% url 'post_comment5' %}"><button>Leave A Comment</button></a>
                 </div>
                 <div class="post-footer">
                     {% for comment in post.comments.all %}
@@ -31,6 +32,7 @@
                 <div>
                     <a href="{% url 'post_edit4' post.pk %}"><button>Edit Blog Post</button></a>
                     <a href="{% url 'post_delete4' post.pk %}"><button>Delete Blog Post</button></a>
+                    <a href="{% url 'post_comment4' %}"><button>Leave A Comment</button></a>
                 </div>
                 <div class="post-footer">
                     {% for comment in post.comments.all %}
@@ -52,6 +54,7 @@
                 <div>
                     <a href="{% url 'post_edit3' post.pk %}"><button>Edit Blog Post</button></a>
                     <a href="{% url 'post_delete3' post.pk %}"><button>Delete Blog Post</button></a>
+                    <a href="{% url 'post_comment3' %}"><button>Leave A Comment</button></a>
                 </div>
                 <div class="post-footer">
                     {% for comment in post.comments.all %}
@@ -73,6 +76,7 @@
                 <div>
                     <a href="{% url 'post_edit2' post.pk %}"><button>Edit Blog Post</button></a>
                     <a href="{% url 'post_delete2' post.pk %}"><button>Delete Blog Post</button></a>
+                    <a href="{% url 'post_comment2' %}"><button>Leave A Comment</button></a>
                 </div>
                 <div class="post-footer">
                     {% for comment in post.comments.all %}
@@ -95,6 +99,7 @@
                     <div>
                         <a href="{% url 'post_edit' post.pk %}"><button>Edit Blog Post</button></a>
                         <a href="{% url 'post_delete' post.pk %}"><button>Delete Blog Post</button></a>
+                        <a href="{% url 'post_comment' %}"><button>Leave A Comment</button></a>
                     </div>
                     
                 </div>
