@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 from django.http import request
-from .models import Cat1, Cat2, Cat3, Cat4, Cat5
+from .models import Cat1, Cat2, Cat3, Cat4, Cat5, Comment, Comment2, Comment3, Comment4, Comment5
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -78,6 +78,31 @@ class Cat5CreateView(CreateView):
     model = Cat5
     template_name = 'post_new.html'
     fields = ['title', 'author', 'body']
+
+class Cat1CreateComment(CreateView):
+    model = Comment
+    template_name = 'post_comment.html'
+    fields = ['article', 'comment', 'author']
+
+class Cat2CreateComment(CreateView):
+    model = Comment2
+    template_name = 'post_comment.html'
+    fields = ['article', 'comment', 'author']
+
+class Cat3CreateComment(CreateView):
+    model = Comment3
+    template_name = 'post_comment.html'
+    fields = ['article', 'comment', 'author']
+
+class Cat4CreateComment(CreateView):
+    model = Comment4
+    template_name = 'post_comment.html'
+    fields = ['article', 'comment', 'author']
+
+class Cat5CreateComment(CreateView):
+    model = Comment5
+    template_name = 'post_comment.html'
+    fields = ['article', 'comment', 'author']
 
 class Cat1UpdateView(UpdateView):
     model = Cat1
