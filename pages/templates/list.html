@@ -11,6 +11,15 @@
                     <a href="{% url 'post_edit5' post.pk %}"><button>Edit Blog Post</button></a>
                     <a href="{% url 'post_delete5' post.pk %}"><button>Delete Blog Post</button></a>
                 </div>
+                <div class="post-footer">
+                    {% for comment in post.comments.all %}
+                        <p>
+                            <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+                            {{ comment }}
+                            something
+                        </p>
+                    {% endfor %}
+                </div>
                 <hr>
             </div>
         {% endfor %}
@@ -22,6 +31,15 @@
                 <div>
                     <a href="{% url 'post_edit4' post.pk %}"><button>Edit Blog Post</button></a>
                     <a href="{% url 'post_delete4' post.pk %}"><button>Delete Blog Post</button></a>
+                </div>
+                <div class="post-footer">
+                    {% for comment in post.comments.all %}
+                        <p>
+                            <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+                            {{ comment }}
+                            something
+                        </p>
+                    {% endfor %}
                 </div>
                 <hr>
             </div>
@@ -35,6 +53,15 @@
                     <a href="{% url 'post_edit3' post.pk %}"><button>Edit Blog Post</button></a>
                     <a href="{% url 'post_delete3' post.pk %}"><button>Delete Blog Post</button></a>
                 </div>
+                <div class="post-footer">
+                    {% for comment in post.comments.all %}
+                        <p>
+                            <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+                            {{ comment }}
+                            something
+                        </p>
+                    {% endfor %}
+                </div>
                 <hr>
             </div>
         {% endfor %}
@@ -46,6 +73,15 @@
                 <div>
                     <a href="{% url 'post_edit2' post.pk %}"><button>Edit Blog Post</button></a>
                     <a href="{% url 'post_delete2' post.pk %}"><button>Delete Blog Post</button></a>
+                </div>
+                <div class="post-footer">
+                    {% for comment in post.comments.all %}
+                        <p>
+                            <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+                            {{ comment }}
+                            something
+                        </p>
+                    {% endfor %}
                 </div>
                 <hr>
             </div>
