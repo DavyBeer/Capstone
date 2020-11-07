@@ -32,7 +32,7 @@ class Comment(models.Model):
         return self.comment
     
     def get_absolute_url(self):
-        return reverse('list')
+        return reverse('cat1')
 
 class Cat2(models.Model):
     title = models.CharField(max_length=200)
@@ -65,7 +65,7 @@ class Comment2(models.Model):
         return self.comment
     
     def get_absolute_url(self):
-        return reverse('list')
+        return reverse('cat2')
 
 class Cat3(models.Model):
     title = models.CharField(max_length=200)
@@ -98,7 +98,7 @@ class Comment3(models.Model):
         return self.comment
     
     def get_absolute_url(self):
-        return reverse('list')
+        return reverse('cat3')
 
 class Cat4(models.Model):
     title = models.CharField(max_length=200)
@@ -131,7 +131,7 @@ class Comment4(models.Model):
         return self.comment
     
     def get_absolute_url(self):
-        return reverse('list')
+        return reverse('cat4')
 
 class Cat5(models.Model):
     title = models.CharField(max_length=200)
@@ -164,4 +164,4 @@ class Comment5(models.Model):
         return self.comment
     
     def get_absolute_url(self):
-        return reverse('list')
+        return reverse('cat5')
