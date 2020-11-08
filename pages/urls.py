@@ -9,6 +9,9 @@ from .views import (
     Cat1CreateComment, Cat2CreateComment, Cat3CreateComment, Cat4CreateComment, Cat5CreateComment,
     Cat1UpdateView, Cat2UpdateView, Cat3UpdateView, Cat4UpdateView, Cat5UpdateView
 )
+
+from . import views
+
 urlpatterns = [
     path('cat1/', Cat1PageView.as_view(), name='cat1'),
     path('cat1/<int:pk>/', Cat1DetailView.as_view(), name='post_detail'),
@@ -40,6 +43,6 @@ urlpatterns = [
     path('cat5/<int:pk>/delete/', Cat5DeleteView.as_view(), name='post_delete5'),
     path('cat5/comment/', Cat5CreateComment.as_view(), name='post_comment5'),
     path('cat5/new/', Cat5CreateView.as_view(), name='post_new5'),
-    path('signup/', SignUpView.as_view(), name='signup'),
-    path('', HomePageView.as_view(), name='home'),
+    path('signup/', views.newsignup, name='signup'),
+    path('', views.newsignup , name='home'),
 ]
