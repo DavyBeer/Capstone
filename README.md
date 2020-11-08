@@ -3,16 +3,18 @@ Your Name:
   Steven Williamson
   
 Overview/description of the project:
-    This application will allows users to, after creating a user account, post and answer questions to a forum
+    This application will allows users tocreate a user account, create posts, and leave comments on those posts
 
 Details on how to use it or what functionality is offered:
-    There will be a page to either sign up or log in. After logging in, the user will be directd to the dashboard where they can enter different categories on the left side of the screen, displaying them on the right. If a question is present, the user can answer it through a comment or read other user's answers, or post their own question to be answered.
+    At the top of the screen, the title of the website is a link that directs to the home page. Clicking on the log in button will load a log in page, the sign up button will display a modal window with a sign up form. Currently there is an account already made, Username: GenericUser & password: password. There are 5 categories to make posts and each post can be commented upon. The author for posts and comments can be selected. 
 
 Technologies used:
-  html, css, js, package.json, .txt, virtualenv, django, 
+  html, css, js, package.json, .txt, virtualenv, django, bootstrap, jquery, popper
 
 
 Ideas for future improvement
-
+  - mandate a user account before posts and comments can be left
+  - mandate that only the current user can leave posts and comments under their name
+  - Create subcategories for more specific posts
 
 For the virtual environment, access the capstone-2dIq4IWb folder
