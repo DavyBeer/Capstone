@@ -1,9 +1,12 @@
 from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.db import IntegrityError
 from django.urls import reverse_lazy
 from django.views import generic
 from django.http import request
+from django.shortcuts import render
 from .models import Cat1, Cat2, Cat3, Cat4, Cat5, Comment, Comment2, Comment3, Comment4, Comment5
 
 class HomePageView(TemplateView):
@@ -163,3 +166,17 @@ class SignUpView(generic.CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'signup.html'
+
+def newsignup(request):
+    if request.method=="POST":
+        if request.POST.get('password1')==request.POST.get('password2'):
+            try: 
+                saveuser=User.objects.create_user(request.POST.get('username'),password=request.POST.get('password1'))
+                saveuser.save()
+                return render(request, 'base.html', {"form":UserCreationForm(), "info":"The User "+request.POST.get('username')+" is created successfully!"})
+            except IntegrityError:
+                return render(request, 'base.html', {"form":UserCreationForm(), "error":"The User "+request.POST.get('username')+" is already taken!"})
+        else:
+            return render(request, 'base.html', {"form":UserCreationForm(), "error":"The passwords are not mathcing!"})
+    else:
+        return render(request, 'base.html', {"form":UserCreationForm})
