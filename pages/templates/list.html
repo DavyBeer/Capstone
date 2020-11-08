@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    {% if request.path_info == '/cat5/' %}
+    {% if request.path_info == '/CoachReviews/' %}
         {% for post in object_list %}
             <div class="post-entry">
                 <h2><a href="{% url 'post_detail5' post.pk %}">{{ post.title }}</a></h2>
@@ -24,7 +24,7 @@
                 <hr>
             </div>
         {% endfor %}
-    {% elif request.path_info == '/cat4/' %}
+    {% elif request.path_info == '/GymReviews/' %}
         {% for post in object_list %}
             <div class="post-entry">
                 <h2><a href="{% url 'post_detail4' post.pk %}">{{ post.title }}</a></h2>
@@ -46,7 +46,7 @@
                 <hr>
             </div>
         {% endfor %}
-    {% elif request.path_info == '/cat3/' %}
+    {% elif request.path_info == '/EquipmentReviews/' %}
         {% for post in object_list %}
             <div class="post-entry">
                 <h2><a href="{% url 'post_detail3' post.pk %}">{{ post.title }}</a></h2>
@@ -68,7 +68,7 @@
                 <hr>
             </div>
         {% endfor %}
-    {% elif request.path_info == '/cat2/' %}
+    {% elif request.path_info == '/NutritionQuestion/' %}
         {% for post in object_list %}
             <div class="post-entry">
                 <h2><a href="{% url 'post_detail2' post.pk %}">{{ post.title }}</a></h2>
@@ -90,7 +90,7 @@
                 <hr>
             </div>
         {% endfor %}
-    {% elif request.path_info == '/cat1/' %}
+    {% elif request.path_info == '/ExerciseQuestion/' %}
         {% for post in object_list %}
             <div class="post">
                 <div class="post-entry">
@@ -116,16 +116,16 @@
             <hr>
         {% endfor %}
     {% endif %}
-    {% if request.path_info == '/cat5/' %}
-        <a href="{% url 'post_new5' %}">+ New Post</a>
-    {% elif request.path_info == '/cat4/' %}
-        <a href="{% url 'post_new4' %}">+ New Post</a>
-    {% elif request.path_info == '/cat3/' %}
-        <a href="{% url 'post_new3' %}">+ New Post</a>
-    {% elif request.path_info == '/cat2/' %}
-        <a href="{% url 'post_new2' %}">+ New Post</a>
-    {% elif request.path_info == '/cat1/' %}
-        <a href="{% url 'post_new' %}">+ New Post</a>
+    {% if request.path_info == '/CoachReviews/' %}
+        <a href="{% url 'post_new5' %}"><button type="button" class="btn btn-info">+ New Post</button></a>
+    {% elif request.path_info == '/GymReviews/' %}
+        <a href="{% url 'post_new4' %}"><button type="button" class="btn btn-info">+ New Post</button></a>
+    {% elif request.path_info == '/EquipmentReviews/' %}
+        <a href="{% url 'post_new3' %}"><button type="button" class="btn btn-info">+ New Post</button></a>
+    {% elif request.path_info == '/NutritionQuestion/' %}
+        <a href="{% url 'post_new2' %}"><button type="button" class="btn btn-info">+ New Post</button></a>
+    {% elif request.path_info == '/ExerciseQuestion/' %}
+        <a href="{% url 'post_new' %}"><button type="button" class="btn btn-info">+ New Post</button></a>
     {% endif %}
     
 {% endblock content %}
